@@ -52,15 +52,10 @@
 ;;Pre-condition: init =/= 0
 ;;Tests: (take (sqrt-lzl 2 1) 3) →  '((1 . 1) (3/2 . 1/4) (17/12 . 1/144)) 
 (define sqrt-lzl 
-  (lambda (x ini)
-    (cons-lzl
-      (cons ini
-            (abs (- (square ini)x)))
-     (lambda()
-       (sqrt-lzl x
-          (improve ini x))))))
-
- 
+  (lambda (x init)
+   @TODO
+  )
+)  
 
 ;;Signature: find-first(lzlst, p)
 ;;Purpose: Return the first item in the given lazy list which satisfies the given predicate. If no such item exists return 'fail.
@@ -70,21 +65,20 @@
 
 (define find-first
   (lambda (lz-lst p)
-    (if (empty-lzl? lz-lst) "fail"
-     (if (p (head lz-lst))
-         (head lz-lst)
-      (find-first (tail lz-lst) p)))))
+   @TODO
+  )
+)
 
 ;;Signature: sqrt2(x,init,epsilon)
 ;;Purpose: return approximation of the square root of the given number x, according to Newton method, starting from init guess with epsilon threshold.  The procedure uses sqrt-lzl and find-first procedures.
 ;;Type: [Number * Number * Number -> Number]
 ;;Pre-condition: init =/= 0
 ;;Tests: (sqrt2 2 1 0.0001) → 1 169/408
-;(define sqrt2
-;  (lambda (x init epsilon)
-;   @TODO
-;  )
-;)
+(define sqrt2
+  (lambda (x init epsilon)
+   @TODO
+  )
+)
 
 
 ;;;; Q2
@@ -93,21 +87,21 @@
 ;;Purpose: Find the value of 'key'. If 'key' is not found return �fail.
 ;;Type: [List<Pair(Symbol,T)>*Symbol -> T | 'fail)
 ;;Tests: (get-value '((a . 3) (b . 4)) 'b) --> 4,(get-value '((a . 3) (b . 4)) 'c) --> 'fail
-;(define get-value
-;  (lambda (assoc-list key)
-;   @TODO
-;  )
-;)
+(define get-value
+  (lambda (assoc-list key)
+   @TODO
+  )
+)
 
 ;;Signature: get-value$(assoc-list, key, success, fail)
 ;;Purpose: Find the value of 'key'. If 'key' is found, then apply the continuation 'success' on its value val. Otherwise, apply the continuation 'fail'.
 ;;Type: [List<Pair<Symbol,T>>*Symbol*[T>->T1] * [Empty->T2]] -> T1 | T2)
 ;;Tests: > (get-value$ '((a . 3) (b . 4)) 'b (lambda(x) (* x x )) (lambda()#f)) --> 16, (get-value$ '((a . 3) (b . 4)) 'c (lambda(x) (* x x)) (lambda()#f)) --> #f
-;(define get-value$
-;  (lambda (assoc-list key success fail)
-;   @TODO
-;  )
-;)
+(define get-value$
+  (lambda (assoc-list key success fail)
+   @TODO
+  )
+)
 
 ;;Signature: collect-all-values(list-assoc-lists, key)
 ;;Purpose: Returns a list of all values of the first occurrence of 'key' in each of the given association lists. If no such value, returns the empty list.
@@ -118,16 +112,16 @@
 ;;(collect-all-values (list l1 l2) 'e) --> '(2 5)
 ;;(collect-all-values (list l1 l2) 'k)--> '()
 
-;(define collect-all-values-1
-; (lambda (lists key)
-;  @TODO
-; )
-;)
-;
-;(define collect-all-values-2
-; (lambda (lists key)
-;  @TODO
-; )
-;)
-;   
+(define collect-all-values-1
+ (lambda (lists key)
+  @TODO
+ )
+)
+
+(define collect-all-values-2
+ (lambda (lists key)
+  @TODO
+ )
+)
+   
    
